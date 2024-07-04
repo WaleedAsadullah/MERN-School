@@ -13,8 +13,12 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import RTreeView from '../component/RTreeView';
 import { Route, Routes } from "react-router-dom";
-import ClassScreen from './student/add';
-import SubjectScreen from './student/list';
+import StudentAdd from './student/add';
+import StudentList from './student/list';
+import StudentTransfer from './student/transfer';
+import TeacherAdd from './teacher/add';
+import TeacherList from './teacher/list';
+import TeacherAllocation from './teacher/allocation';
 
 
 const drawerWidth = 240;
@@ -91,7 +95,7 @@ export default function DashboardScreen() {
           },
           {
               name : 'List',
-              route : '/'
+              route : '/list'
           },
           {
             name : 'Transfer',
@@ -109,7 +113,7 @@ export default function DashboardScreen() {
         },
         {
             name : 'List',
-            route : '/'
+            route : '/list'
         },
         {
           name : 'Allocation',
@@ -266,8 +270,18 @@ export default function DashboardScreen() {
       <Main open={open}>
         <DrawerHeader />
             <Routes>
-                <Route path="/student/class" element={ <ClassScreen/> }/>
-                <Route path="/student/subject" element={ <SubjectScreen/> }/>
+                <Route path="/student/add" element={ <StudentAdd/> }/>
+                <Route path="/student/list" element={ <StudentList/> }/>
+                <Route path="/student/transfer" element={ <StudentTransfer/> }/>
+
+                <Route path="/teacher/add" element={ <TeacherAdd/> }/>
+                <Route path="/teacher/list" element={ <TeacherList/> }/>
+                <Route path="/allocation/transfer" element={ <TeacherAllocation/> }/>
+
+                <Route path="/teacher/add" element={ <TeacherAdd/> }/>
+                <Route path="/teacher/list" element={ <TeacherList/> }/>
+                <Route path="/allocation/transfer" element={ <TeacherAllocation/> }/>
+                
             </Routes>
       </Main>
     </Box>
