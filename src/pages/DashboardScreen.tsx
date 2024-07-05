@@ -19,6 +19,10 @@ import StudentTransfer from './student/transfer';
 import TeacherAdd from './teacher/add';
 import TeacherList from './teacher/list';
 import TeacherAllocation from './teacher/allocation';
+import ClassAdd from './class/add';
+import ClassList from './class/list';
+import SubjectAdd from './subject/add';
+import SubjectList from './subject/list';
 
 
 const drawerWidth = 240;
@@ -145,7 +149,7 @@ export default function DashboardScreen() {
         },
         {
             name : 'List',
-            route : '/'
+            route : '/list'
         },
     ]
   },
@@ -278,9 +282,11 @@ export default function DashboardScreen() {
                 <Route path="/teacher/list" element={ <TeacherList/> }/>
                 <Route path="/allocation/transfer" element={ <TeacherAllocation/> }/>
 
-                <Route path="/teacher/add" element={ <TeacherAdd/> }/>
-                <Route path="/teacher/list" element={ <TeacherList/> }/>
-                <Route path="/allocation/transfer" element={ <TeacherAllocation/> }/>
+                <Route path="/class/add" element={ <ClassAdd/> }/>
+                <Route path="/class/list" element={ <ClassList/> }/>
+                
+                <Route path="/subject/add" element={ <SubjectAdd/> }/>
+                <Route path="/subject/list" element={ <SubjectList/> }/>
                 
             </Routes>
       </Main>
